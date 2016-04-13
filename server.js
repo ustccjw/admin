@@ -15,7 +15,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler))
 
 app.get('/weini/admin/', (req, res) => {
-	res.sendFile(`${__dirname}/template/index.html`)
+	res.sendFile(`${__dirname}/view/index.html`)
 })
 
 app.listen(port, error => {
