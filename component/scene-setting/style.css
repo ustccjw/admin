@@ -1,0 +1,24 @@
+admin-scene-setting {
+	display: block;
+	form {
+		> div {
+			margin-bottom: 20px;
+			> label {
+				display: flex;
+				align-items: center;
+				> strong {
+					width: 150px;
+				}
+				> div {
+					flex: 1;
+				}
+			}
+		}
+		div[data-submit] {
+			display: flex;
+			justify-content: center;
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+}

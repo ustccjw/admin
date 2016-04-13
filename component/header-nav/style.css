@@ -1,0 +1,8 @@
+admin-header-nav {
+	display: block;
+	nav {
+		div[data-appbar] {
+			margin-bottom: 30px;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+admin-greeting-rule {
+	display: flex;
+	position: relative;
+	border: 1px solid #ccc;
+	user-select: none;
+	&[data-current=true] {
+		&::after {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			padding: 5px;
+			content: '使用中';
+			color: #fff;
+			background: #FF8DB4;
+		}
+	}
+	&[data-online=true] {
+		&::before {
+			position: absolute;
+			padding: 5px;
+			content: '在线';
+			color: #fff;
+			background: #66D7E6;
+		}
+	}
+	&[data-offline=true] {
+		&::before {
+			position: absolute;
+			padding: 5px;
+			content: '离线';
+			color: #fff;
+			background: #66D7E6;
+		}
+	}
+	&[data-drag] {
+		opacity: 0.5;
+	}
+	&[data-dragover] {
+		border-style: dashed;
+		border-width: 3px;
+	}
+	> div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px 10px;
+	}
+	div[data-restrict] {
+		flex-flow: column;
+		flex: 1;
+		> span {
+			margin: 5px 0;
+		}
+	}
+	div[data-msg] {
+		flex: 2;
+	}
+	div[data-operator] {
+		width: 60px;
+		justify-content: space-between;
+		a {
+			outline: none;
+		}
+	}
+}

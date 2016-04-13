@@ -1,0 +1,16 @@
+admin-signin {
+	display: block;
+	margin: auto;
+	form {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		width: 800px;
+		> div {
+			margin-bottom: 20px;
+			strong {
+				margin-right: 20px;
+			}
+		}
+	}
+}

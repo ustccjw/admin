@@ -1,0 +1,48 @@
+@import '~nprogress/nprogress.css';
+@import '~sweetalert/dist/sweetalert.css';
+@import '~sweetalert/themes/google/google.css';
+@import '~react-select/dist/react-select.css';
+@import '~rc-tooltip/assets/bootstrap_white.css';
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 13px;
+	font-family: arial,sans-serif;
+
+	/** fix date-pick */
+	> div {
+		button {
+			font: inherit;
+		}
+	}
+}
+
+#nprogress {
+	.bar {
+		background: rgb(255, 64, 129);
+		z-index: 9999;
+	}
+	.spinner {
+		z-index: 9999;
+	}
+	.spinner-icon {
+		border-top-color: rgb(255, 64, 129);
+		border-left-color: rgb(255, 64, 129);
+	}
+}
+
+.rc-tooltip {
+	opacity: 1;
+	.rc-tooltip-arrow {
+		border-right-color: #fff;
+		border-left-color: #fff;
+	}
+	.rc-tooltip-inner {
+		padding: 8px 0;
+		border: none;
+	}
+}

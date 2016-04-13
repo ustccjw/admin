@@ -1,0 +1,45 @@
+admin-rule-setting {
+	display: block;
+	form {
+		> div {
+			display: flex;
+			margin-bottom: 20px;
+			> label {
+				display: flex;
+				align-items: center;
+				flex: 1;
+				> strong {
+					width: 70px;
+				}
+				> div {
+					flex: 1;
+				}
+			}
+		}
+		div[data-repeattype] {
+			> label {
+				> div {
+					display: flex;
+					> div {
+						width: 150px !important;
+					}
+				}
+			}
+		}
+		div[data-repeatweek], div[data-repeatdate] {
+			> label > div {
+				display: flex;
+				justify-content: space-between;
+				> div {
+					margin-right: 5px;
+				}
+			}
+		}
+		div[data-submit] {
+			justify-content: center;
+			> label {
+				flex: 0 1 auto;
+			}
+		}
+	}
+}
