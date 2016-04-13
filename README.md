@@ -4,6 +4,8 @@
 
 You can see related slide: http://slides.com/ustccjw/react
 
+Running and test rely on backend API, so it just demo case.
+
 * [React Component Style][1]
 * [Async-props][2]
 * [Falcor + Restful API][3]
