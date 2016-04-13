@@ -86,7 +86,6 @@ Greeting.propTypes = {
 	sceneId: React.PropTypes.string.isRequired,
 	rule: React.PropTypes.object,
 	scene: React.PropTypes.object,
-
 	scenes: React.PropTypes.array.isRequired,
 	allRoles: React.PropTypes.array.isRequired,
 	rules: React.PropTypes.array.isRequired,
