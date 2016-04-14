@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const postcssNested = require('postcss-nested')
 const postcssCssnext = require('postcss-cssnext')
 
@@ -12,7 +13,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'dev'),
 		filename: 'bundle.js',
-		publicPath: '/weini/admin/static/',
+		publicPath: '/weini/admin/',
 	},
 	resolve: {
 		extensions: ['', '.jsx', '.js', '.css'],
@@ -35,6 +36,10 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			title: '维尼控制台',
+			filename: 'index.html',
+		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('development'),
 		}),

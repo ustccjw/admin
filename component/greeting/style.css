@@ -18,8 +18,6 @@ admin-greeting {
       margin: 10px 0;
     }
     > div:first-child {
-      border: 1px solid #ccc;
-      padding: 0 10px;
       admin-greeting-rule {
         cursor: pointer;
       }

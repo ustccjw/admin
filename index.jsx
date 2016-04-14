@@ -9,7 +9,9 @@ import './lib/listener'
 
 let rootElement = document.querySelector('main')
 if (!rootElement) {
-	rootElement = document.body.appendChild(document.createElement('main'))
+	const body = document.body
+	rootElement = document.createElement('main')
+	body.insertBefore(rootElement, body.firstChild)
 }
 const renderLoading = () => <Loader color="#26A65B" />
 const onError = err => {

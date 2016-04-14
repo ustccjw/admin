@@ -14,10 +14,6 @@ app.use(webpackDevMiddleware(compiler, {
 }))
 app.use(webpackHotMiddleware(compiler))
 
-app.get('/weini/admin/', (req, res) => {
-	res.sendFile(`${__dirname}/view/index.html`)
-})
-
 app.listen(port, error => {
 	if (error) {
 		console.error(error) // eslint-disable-line no-console

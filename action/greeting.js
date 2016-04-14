@@ -168,7 +168,16 @@ export const saveScene = async () => {
 	checkScene(scene)
 
 	await dataModel.call(['scene', 'save'], [scene])
-	await uiModel.setValue(['app', 'modalName'], '')
+	await uiModel.set({
+		json: {
+			app: {
+				modalName: '',
+			},
+			greeting: {
+				sceneId: scene.symbol,
+			},
+		},
+	})
 	dataModel.invalidate(['scene', 'all'])
 	return global.reload('greeting: saveScene')
 }
