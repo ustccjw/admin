@@ -28,6 +28,9 @@ const Label = ({ name }) => {
 		</div>
 	)
 }
+Label.propTypes = {
+	name: React.PropTypes.string.isRequired,
+}
 
 const Topbar = ({ role }) => (
 	<div data-topbar>
@@ -39,6 +42,9 @@ const Topbar = ({ role }) => (
 		</div>
 	</div>
 )
+Topbar.propTypes = {
+	role: React.PropTypes.string.isRequired,
+}
 
 const RuleList = ({ rules }) => {
 	const preferenceRuleList = rules.slice(0, -2).map(rule => <GreetingRule key={rule.id} rule={rule}
@@ -50,6 +56,9 @@ const RuleList = ({ rules }) => {
 			<div>{defaultRuleList}</div>
 		</div>
 	)
+}
+RuleList.propTypes = {
+	rules: React.PropTypes.array.isRequired,
 }
 
 const Greeting = props => {
@@ -80,7 +89,6 @@ const Greeting = props => {
 		</admin-greeting>
 	)
 }
-
 Greeting.propTypes = {
 	modalName: React.PropTypes.string.isRequired,
 	sceneId: React.PropTypes.string.isRequired,

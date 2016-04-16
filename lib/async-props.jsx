@@ -58,6 +58,11 @@ const AsyncPropsContainer = ({ Component, routerProps, asyncInfo,
 			loading={loading} />
 	)
 }
+AsyncPropsContainer.propTypes = {
+	Component: React.PropTypes.func.isRequired,
+	routerProps: React.PropTypes.object.isRequired,
+	asyncInfo: React.PropTypes.object.isRequired,
+}
 
 class AsyncProps extends React.Component {
 	static propTypes = {

@@ -1,7 +1,7 @@
 import queryString from 'query-string'
 import { dataModel, uiModel } from '../model'
 
-export const loadProps = async (params, location) => {
+export const loadProps = async (params: Object, location: Object) => {
 	const response = await uiModel.get(['signin', ['username', 'password']])
 	const { username, password } = response.json.signin
 	const query = queryString.parse(location.search)
@@ -9,7 +9,7 @@ export const loadProps = async (params, location) => {
 	return { username, password, redirect: decodeURIComponent(redirect) }
 }
 
-export const handleChange = async (key, value) => {
+export const handleChange = async (key: string, value: string) => {
 	await uiModel.setValue(['signin', key], value)
 	return global.reload('signin: handleChange', key, value)
 }

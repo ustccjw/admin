@@ -33,7 +33,6 @@ const SceneOperator = props => {
 		</admin-scene-operator>
 	)
 }
-
 SceneOperator.propTypes = {
 	name: React.PropTypes.string.isRequired,
 }

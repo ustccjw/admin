@@ -14,6 +14,5 @@
     func-names: 0
 
     # react
-    react/prop-types: 0
     react/jsx-closing-bracket-location: 0
     react/jsx-indent-props: [2, tab]

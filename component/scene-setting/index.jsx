@@ -18,6 +18,9 @@ const Id = ({ id }) => (
 		</label>
 	</div>
 )
+Id.propTypes = {
+	id: React.PropTypes.string.isRequired,
+}
 
 const Name = ({ name }) => (
 	<div data-name>
@@ -28,6 +31,9 @@ const Name = ({ name }) => (
 		</label>
 	</div>
 )
+Name.propTypes = {
+	name: React.PropTypes.string.isRequired,
+}
 
 const Role = ({ allRoles, role }) => {
 	const options = allRoles.map(({ name: label, key: value }) => ({ label, value }))
@@ -39,6 +45,10 @@ const Role = ({ allRoles, role }) => {
 		</label>
 	)
 	return <div>{select}</div>
+}
+Role.propTypes = {
+	allRoles: React.PropTypes.array.isRequired,
+	role: React.PropTypes.string.isRequired,
 }
 
 const Submit = () => (
@@ -74,7 +84,6 @@ const SceneSetting = props => {
 		</admin-scene-setting>
 	)
 }
-
 SceneSetting.propTypes = {
 	scene: React.PropTypes.object,
 	allRoles: React.PropTypes.array.isRequired,
