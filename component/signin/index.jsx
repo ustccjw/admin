@@ -1,7 +1,7 @@
 import React from 'react'
 import { hashHistory as history } from 'react-router'
-import TextField from 'material-ui/lib/text-field'
-import RaisedButton from 'material-ui/lib/raised-button'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 import swal from 'sweetalert'
 
 import './style'

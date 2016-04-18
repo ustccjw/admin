@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuItem from 'material-ui/lib/menus/menu-item'
+import MenuItem from 'material-ui/MenuItem'
 import swal from 'sweetalert'
 
 import './style'

@@ -1,6 +1,6 @@
 import React from 'react'
-import ActionDelete from 'material-ui/lib/svg-icons/action/delete'
-import ContentCreate from 'material-ui/lib/svg-icons/content/create'
+import ActionDelete from 'material-ui/svg-icons/action/delete'
+import ContentCreate from 'material-ui/svg-icons/content/create'
 import swal from 'sweetalert'
 import { warmUpDateType, warmUpLevel } from '../../constant'
 

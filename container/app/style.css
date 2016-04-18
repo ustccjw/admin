@@ -12,13 +12,6 @@ html, body {
 body {
 	font-size: 13px;
 	font-family: arial,sans-serif;
-
-	/** fix date-pick */
-	> div {
-		button {
-			font: inherit;
-		}
-	}
 }
 
 #nprogress {

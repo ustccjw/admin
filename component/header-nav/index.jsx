@@ -1,9 +1,9 @@
 import React from 'react'
 import { hashHistory as history } from 'react-router'
-import AppBar from 'material-ui/lib/app-bar'
-import LeftNav from 'material-ui/lib/left-nav'
-import MenuItem from 'material-ui/lib/menus/menu-item'
-import FlatButton from 'material-ui/lib/flat-button'
+import AppBar from 'material-ui/Appbar'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
+import FlatButton from 'material-ui/FlatButton'
 
 import './style'
 
@@ -33,11 +33,11 @@ const Nav = ({ modalName, links }) => {
 	)
 	return (
 		<nav>
-			<LeftNav docked={false} width={250} open={modalName === 'nav'}
+			<Drawer docked={false} width={250} open={modalName === 'nav'}
 				onRequestChange={open => open ? setModal('nav') : setModal() }>
 				<AppBar data-appbar title="维尼控制台" showMenuIconButton={false} />
 				{linkList}
-			</LeftNav>
+			</Drawer>
 		</nav>
 	)
 }

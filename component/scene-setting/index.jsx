@@ -1,6 +1,6 @@
 import React from 'react'
-import TextField from 'material-ui/lib/text-field'
-import FlatButton from 'material-ui/lib/flat-button'
+import TextField from 'material-ui/TextField'
+import FlatButton from 'material-ui/FlatButton'
 import Select from 'react-select'
 import swal from 'sweetalert'
 
@@ -35,7 +35,10 @@ const Role = ({ allRoles, role }) => {
 		<label data-role>
 			<strong>响应团队</strong>
 			<Select value={role} options={options} multi
-				onChange={value => handleSceneChange('role', value)} />
+				onChange={array => {
+					const role1 = array.map(({ value }) => value).join(',')
+					handleSceneChange('role', role1)
+				}} />
 		</label>
 	)
 	return <div>{select}</div>
