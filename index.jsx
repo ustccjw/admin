@@ -26,8 +26,7 @@ let render = () => {
 	const routes = require('./route').default
 	const router = (
 		<Router key={Math.random()} routes={routes} history={history}
-			render={props => <AsyncProps {...props} onError={onError}
-				renderLoading={renderLoading} />} />
+			render={props => <AsyncProps {...props} onError={onError} renderLoading={renderLoading} />} />
 	)
 	ReactDOM.render(router, rootElement)
 }
