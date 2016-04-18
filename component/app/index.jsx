@@ -24,6 +24,7 @@ const App = props => {
 		</admin-app>
 	)
 }
+
 App.propTypes = {
 	children: React.PropTypes.any.isRequired,
 	location: React.PropTypes.object.isRequired,

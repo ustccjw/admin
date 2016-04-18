@@ -1,4 +1,4 @@
-export const toggleArray = (array: Array, value) => {
+export const toggleArray = (array, value) => {
 	const res = [...array]
 	const index = array.indexOf(value)
 	if (index === -1) {

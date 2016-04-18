@@ -37,16 +37,8 @@ const Operator = ({ id, name, removeable }) => (
 		)}
 	</div>
 )
-Operator.propTypes = {
-	id: React.PropTypes.number.isRequired,
-	name: React.PropTypes.string.isRequired,
-	removeable: React.PropTypes.bool.isRequired,
-}
 
 const Msg = ({ msg }) => <div data-msg>{msg}</div>
-Msg.propTypes = {
-	msg: React.PropTypes.string.isRequired,
-}
 
 const Restrict = ({ rule, isAll }) => {
 	const { name, daysOfWeek, startTime, endTime, startDate, endDate, dateType } = rule
@@ -64,10 +56,7 @@ const Restrict = ({ rule, isAll }) => {
 	} else if (isNone) {
 		repeatDate = '所有日期'
 	}
-	let timeRange = '所以时间'
-	if (!isAll) {
-		timeRange = `${startTime} - ${endTime}`
-	}
+	const timeRange = isAll ? '所有时间' : `${startTime} - ${endTime}`
 	return (
 		<div data-restrict>
 			<span>{name}</span>
@@ -75,10 +64,6 @@ const Restrict = ({ rule, isAll }) => {
 			<span>{repeatDate}</span>
 		</div>
 	)
-}
-Restrict.propTypes = {
-	rule: React.PropTypes.object.isRequired,
-	isAll: React.PropTypes.bool.isRequired,
 }
 
 const GreetingRule = props => {
@@ -157,10 +142,12 @@ const GreetingRule = props => {
 		</admin-greeting-rule>
 	)
 }
+
 GreetingRule.propTypes = {
 	rule: React.PropTypes.object.isRequired,
 	draggable: React.PropTypes.bool,
 }
+
 GreetingRule.defaultProps = {
 	draggable: false,
 }

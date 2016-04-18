@@ -17,9 +17,6 @@ const Username = ({ username }) => (
 		</label>
 	</div>
 )
-Username.propTypes = {
-	username: React.PropTypes.string.isRequired,
-}
 
 const Password = ({ password }) => (
 	<div data-password>
@@ -30,9 +27,6 @@ const Password = ({ password }) => (
 		</label>
 	</div>
 )
-Password.propTypes = {
-	password: React.PropTypes.string.isRequired,
-}
 
 const Submit = () => (
 	<div data-submit>
@@ -62,6 +56,7 @@ const Signin = props => {
 		</admin-signin>
 	)
 }
+
 Signin.propTypes = {
 	username: React.PropTypes.string.isRequired,
 	password: React.PropTypes.string.isRequired,

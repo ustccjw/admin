@@ -32,10 +32,6 @@ const StartEnd = ({ startTime, endTime }) => (
 		</label>
 	</div>
 )
-StartEnd.propTypes = {
-	startTime: React.PropTypes.string.isRequired,
-	endTime: React.PropTypes.string.isRequired,
-}
 
 const RepeatType = ({ dateType }) => (
 	<div data-repeattype>
@@ -51,9 +47,6 @@ const RepeatType = ({ dateType }) => (
 		</label>
 	</div>
 )
-RepeatType.propTypes = {
-	dateType: React.PropTypes.number.isRequired,
-}
 
 const RepeatWeek = ({ daysOfWeek }) => {
 	const week = ['一', '二', '三', '四', '五', '六', '日']
@@ -69,9 +62,6 @@ const RepeatWeek = ({ daysOfWeek }) => {
 			</label>
 		</div>
 	)
-}
-RepeatWeek.propTypes = {
-	daysOfWeek: React.PropTypes.array.isRequired,
 }
 
 const RepeatDate = ({ startDate, endDate }) => {
@@ -92,10 +82,6 @@ const RepeatDate = ({ startDate, endDate }) => {
 		</div>
 	)
 }
-RepeatDate.propTypes = {
-	startDate: React.PropTypes.string.isRequired,
-	endDate: React.PropTypes.string.isRequired,
-}
 
 const Name = ({ name, disabled }) => (
 	<div data-name>
@@ -106,10 +92,6 @@ const Name = ({ name, disabled }) => (
 		</label>
 	</div>
 )
-Name.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	disabled: React.PropTypes.bool.isRequired,
-}
 
 const Msg = ({ msg }) => (
 	<div data-msg>
@@ -120,9 +102,6 @@ const Msg = ({ msg }) => (
 		</label>
 	</div>
 )
-Msg.propTypes = {
-	msg: React.PropTypes.string.isRequired,
-}
 
 const Submit = () => (
 	<div data-submit>
@@ -169,6 +148,7 @@ const RuleSetting = props => {
 		</admin-rule-setting>
 	)
 }
+
 RuleSetting.propTypes = {
 	rule: React.PropTypes.object,
 }

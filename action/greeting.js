@@ -4,7 +4,7 @@ import { warmUpDateType } from '../constant'
 
 const { atom: $atom } = falcor.Model
 
-function checkRule(rule: Object) {
+function checkRule(rule) {
 	const { startTime, endTime, startDate, endDate, dateType, daysOfWeek } = rule
 	const isWeek = warmUpDateType[dateType] === 'DAYS_OF_WEEK'
 	const isDate = warmUpDateType[dateType] === 'INTERVAL_DATE'
@@ -19,7 +19,7 @@ function checkRule(rule: Object) {
 	}
 }
 
-function checkScene(scene: Object) {
+function checkScene(scene) {
 	const { role } = scene
 	if (!role) {
 		throw new Error('响应团队不能为空')
@@ -41,12 +41,12 @@ export const loadProps = async () => {
 	return { sceneId, rule, scene, scenes, allRoles, rules }
 }
 
-export const setSceneId = async (sceneId: string) => {
+export const setSceneId = async sceneId => {
 	await uiModel.setValue(['greeting', 'sceneId'], sceneId)
 	return global.reload('greeting: setSceneId', sceneId)
 }
 
-export const updateRule = async (id: number) => {
+export const updateRule = async id => {
 	const sceneId = await uiModel.getValue(['greeting', 'sceneId'])
 	const response = await dataModel.get(['greeting', 'rules', sceneId])
 	const { [sceneId]: rules } = response.json.greeting.rules
@@ -65,7 +65,7 @@ export const updateRule = async (id: number) => {
 	return global.reload('greeting: updateRule', id)
 }
 
-export const addRule = async (type: string) => {
+export const addRule = async type => {
 	const level = type === 'online' ? 0 : 1
 	await uiModel.set({
 		json: {
@@ -80,7 +80,7 @@ export const addRule = async (type: string) => {
 	return global.reload('greeting: addRule', type)
 }
 
-export const handleRuleChange = async (key: string, value: string) => {
+export const handleRuleChange = async (key, value) => {
 	const rule = await uiModel.getValue(['greeting', 'rule'])
 
 	await uiModel.setValue(['greeting', 'rule'], { ...rule, [key]: value })
@@ -98,7 +98,7 @@ export const saveRule = async () => {
 	return global.reload('greeting: saveRule')
 }
 
-export const removeRule = async (id: number) => {
+export const removeRule = async id => {
 	const sceneId = await uiModel.getValue(['greeting', 'sceneId'])
 
 	await dataModel.call(['greeting', 'removeRule'], [id])
@@ -106,7 +106,7 @@ export const removeRule = async (id: number) => {
 	return global.reload('greeting: removeRule', id)
 }
 
-export const resortRule = async (dragId: number, id: number) => {
+export const resortRule = async (dragId, id) => {
 	const sceneId = await uiModel.getValue(['greeting', 'sceneId'])
 
 	await dataModel.call(['greeting', 'resortRule'], [dragId, id])
@@ -156,7 +156,7 @@ export const addScene = async () => {
 	return global.reload('greeting: addScene')
 }
 
-export const handleSceneChange = async (key: string, value: string) => {
+export const handleSceneChange = async (key, value) => {
 	const scene = await uiModel.getValue(['greeting', 'scene'])
 
 	await uiModel.setValue(['greeting', 'scene'], { ...scene, [key]: value })

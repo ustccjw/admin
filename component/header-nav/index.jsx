@@ -23,9 +23,6 @@ const Header = ({ title }) => {
 		</header>
 	)
 }
-Header.propTypes = {
-	title: React.PropTypes.string.isRequired,
-}
 
 const Nav = ({ modalName, links }) => {
 	const linkList = links.map(({ title, href }) =>
@@ -44,10 +41,6 @@ const Nav = ({ modalName, links }) => {
 		</nav>
 	)
 }
-Nav.propTypes = {
-	modalName: React.PropTypes.string.isRequired,
-	links: React.PropTypes.array.isRequired,
-}
 
 const HeaderNav = props => {
 	const { title, links, modalName } = props
@@ -58,6 +51,7 @@ const HeaderNav = props => {
 		</admin-header-nav>
 	)
 }
+
 HeaderNav.propTypes = {
 	title: React.PropTypes.string.isRequired,
 	links: React.PropTypes.array.isRequired,
