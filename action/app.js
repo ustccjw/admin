@@ -1,9 +1,8 @@
 import { uiModel, dataModel } from '../model'
 
 export const loadProps = async () => {
-	const response = await uiModel.get(['app', ['navOpen', 'modalName']])
-	const { navOpen, modalName } = response.json.app
-	return { navOpen, modalName }
+	const modalName = await uiModel.getValue(['app', 'modalName'])
+	return { modalName }
 }
 
 export const setModal = async (name = '') => {

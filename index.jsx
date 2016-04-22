@@ -23,7 +23,7 @@ const onError = err => {
 }
 
 let render = () => {
-	const routes = require('./route').default
+	const routes = require('./route').default // eslint-disable-line global-require
 	const router = (
 		<Router key={Math.random()} routes={routes} history={history}
 			render={props => <AsyncProps {...props} onError={onError} renderLoading={renderLoading} />} />
@@ -34,7 +34,7 @@ let render = () => {
 if (module.hot) {
 	const renderApp = render
 	const renderError = err => {
-		const RedBox = require('redbox-react')
+		const RedBox = require('redbox-react') // eslint-disable-line global-require
 		ReactDOM.render(<RedBox error={err} />, rootElement)
 	}
 	render = () => {
